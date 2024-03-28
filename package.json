@@ -1,0 +1,35 @@
+{
+  "name": "assignment3",
+  "version": "1.0.0",
+  "description": "Health Api Endpoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js --exit"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "cors",
+    "mysql2"
+  ],
+  "author": "Sravani Banala",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1504.0",
+    "base-64": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "chai": "^4.3.10",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mocha": "^10.2.0",
+    "mysql2": "^3.6.1",
+    "node-statsd": "^0.1.1",
+    "sequelize": "^6.33.0",
+    "supertest": "^6.3.3",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  }
+}
