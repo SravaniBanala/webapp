@@ -29,10 +29,10 @@ Typically application flow comprises of the following steps:
 }
 ```
 3. The publication of a message to the topic triggers a lambda function, which then deserialized the JSON payload and performs the following actions
-    Downloads the submission ZIP from the endpoint provided by the user
-    Uploads the ZIP to a GCP Cloud Storage bucket
-    Creates a new item for the submission in a DynamoDB table
-    Leverages SMTP to send an email to the user about the submissions status and its storage details
+    - Downloads the submission ZIP from the endpoint provided by the user
+    -  Uploads the ZIP to a GCP Cloud Storage bucket
+    -  Creates a new item for the submission in a DynamoDB table
+    -  Leverages SMTP to send an email to the user about the submissions status and its storage details
 
 Here is a brief overview of the AWS components by their functionality involved in driving the use cases of the application:
 
