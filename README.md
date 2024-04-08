@@ -118,13 +118,13 @@ To deploy the web application in a consistent, repeatable and reliable manner, w
 There are 2 primary workflows that ensure the AMI with the latest code changes are available in the account:
 
  1. **packer-validate** : this workflow is triggered when a new PR is raised or an existing one is updated and performs the following key operations:
-   -  a. Integration test execution: this runs the integration test of the application, which essentially executes a test call to the Database to ensure that the application is user-ready
-   - b. packer format: this ensures that the **.hcl** AMI build file is formatted appropriately and there are no syntactical errors
-2. **packer-build**: this workflow is triggered after a PR has been successfully merged and performs these actions:
- -  a. Integration test execution: this runs the integration test of the application, which essentially executes a test call to the Database to ensure that the application is user-ready
- -  b. Build AMI: creates an immutable service instance of the web application, from copying the JAR, environment variables that is built to setting up **systemd** configurations to ensure that app is self-starting and self-healing in EC2.
- -  c. Publish AMI:  publishes the AMI image to the AWS account using appropriate IAM user credentials stashed in the repo
- -  d. Instance refresh: creates a **new launch template** with this latest AMI and performs an **instance refresh** on the Autoscaling Group using AWS CLI commands
+     a. Integration test execution: this runs the integration test of the application, which essentially executes a test call to the Database to ensure that the application is user-ready
+     b. packer format: this ensures that the **.hcl** AMI build file is formatted appropriately and there are no syntactical errors
+3. **packer-build**: this workflow is triggered after a PR has been successfully merged and performs these actions:
+     a. Integration test execution: this runs the integration test of the application, which essentially executes a test call to the Database to ensure that the application is user-ready
+     b. Build AMI: creates an immutable service instance of the web application, from copying the JAR, environment variables that is built to setting up **systemd** configurations to ensure that app is self-starting and self-healing in EC2.
+     c. Publish AMI:  publishes the AMI image to the AWS account using appropriate IAM user credentials stashed in the repo
+     d. Instance refresh: creates a **new launch template** with this latest AMI and performs an **instance refresh** on the Autoscaling Group using AWS CLI commands
 
 Through these workflows, the latest version of the application is automatically deployed into production with every code change.
 
